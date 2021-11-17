@@ -19,9 +19,10 @@ public class Main {
         String title = sc.nextLine();
         System.out.printf("내용 : ");
         String board = sc.nextLine();
-        System.out.println("1번 게시물이 등록되었습니다.");
+        int Num = 1;
+        System.out.printf("%d번 게시물이 등록되었습니다. \n", Num);
       }
-      if (str.equals("exit")) {
+      else if (str.equals("exit")) {
         break;
       }
     }
