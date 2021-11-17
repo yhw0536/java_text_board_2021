@@ -12,7 +12,15 @@ public class Main {
     while (true) {
       System.out.printf("명령 : ");
       String str = sc.nextLine();
-      System.out.printf("입력된 명령어 : %s\n", str);
+      // System.out.printf("입력된 명령어 : %s\n", str);
+      if (str.equals("/user/article/write")) {
+        System.out.println("- 게시물 등록 -");
+        System.out.printf("제목 : ");
+        String title = sc.nextLine();
+        System.out.printf("내용 : ");
+        String board = sc.nextLine();
+        System.out.println("1번 게시물이 등록되었습니다.");
+      }
       if (str.equals("exit")) {
         break;
       }
