@@ -2,15 +2,21 @@ package com.yhw.exam.board;
 
 import java.util.Scanner;
 
+class Article {
+  int id;
+  String title;
+  String body;
+}
+
 public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-
+    Article article = new Article();
+    int articlesLastId = 0;
 
     System.out.println("== 게시판 v 0.1 ==");
     System.out.println("== 프로그램 시작 ==");
 
-    int articlesLastId = 0;
     while (true) {
       System.out.printf("명령 : ");
       String str = sc.nextLine();
@@ -20,11 +26,17 @@ public class Main {
         System.out.printf("제목 : ");
         String title = sc.nextLine();
         System.out.printf("내용 : ");
-        String board = sc.nextLine();
-        int Num = articlesLastId + 1;
-        articlesLastId = Num;
+        String body = sc.nextLine();
+        int id = articlesLastId + 1;
+        articlesLastId = id;
 
-        System.out.printf("%d번 게시물이 등록되었습니다. \n", Num);
+        article.id = id;
+        article.title = title;
+        article.body = body;
+        System.out.println("생성된 게시물 객체 : " + article);
+
+        System.out.printf("%d번 게시물이 등록되었습니다. \n", id);
+
 
       } else if (str.equals("exit")) {
         break;
