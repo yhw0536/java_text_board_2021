@@ -3,6 +3,7 @@ package com.yhw.exam.board;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+<<<<<<< HEAD
 /*
 TODO
 - [x] 환영메세지 출력
@@ -30,10 +31,14 @@ TODO
  */
 
 class Article {
+=======
+class Article extends Object {
+>>>>>>> bc5366be0005c050a9fdab01f1d9d5a3ec5638af
   int id;
   String title;
   String body;
 
+<<<<<<< HEAD
   Article() {
 
   }
@@ -47,6 +52,12 @@ class Article {
   @Override
   public String toString() {
     return String.format("{id : \"%d\", title : \"%s\", body : \"%s\"}", id, title, body);
+=======
+  @Override
+  public String toString() {
+    // return String.format("{id: " + id + ", " + "title: " + title + ", " + "body: " + body + "}");
+    return String.format("{id : %d, title : \"%s\" body : \"%s\"}", id, title, body);
+>>>>>>> bc5366be0005c050a9fdab01f1d9d5a3ec5638af
   }
 }
 
@@ -54,6 +65,7 @@ public class Main {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
+<<<<<<< HEAD
     int articlesLastId = 0;
     Article lastArticle = null;
     ArrayList<Article> arr = new ArrayList<Article>();
@@ -66,6 +78,42 @@ public class Main {
       String cmd = sc.nextLine();
 
       if (cmd.equals("exit")) {
+=======
+    Article article = new Article();
+    int articlesLastId = 0;
+
+    System.out.println("== 게시판 v 0.1 ==");
+    System.out.println("== 프로그램 시작 ==");
+
+    while (true) {
+      System.out.printf("명령 : ");
+      String str = sc.nextLine();
+      // System.out.printf("입력된 명령어 : %s\n", str);
+      if (str.equals("/user/article/write")) {
+        System.out.println("- 게시물 등록 -");
+        System.out.printf("제목 : ");
+        String title = sc.nextLine();
+        System.out.printf("내용 : ");
+        String body = sc.nextLine();
+        int id = articlesLastId + 1;
+        articlesLastId = id;
+
+        article.id = id;
+        article.title = title;
+        article.body = body;
+        System.out.println("생성된 게시물 객체 : " + article.toString());
+        System.out.printf("%d번 게시물이 등록되었습니다. \n", id);
+
+        /*
+        System.out.println("id: " + id);
+        System.out.println("title : " + title);
+        System.out.println("body : " + body);
+        */
+
+        System.out.println();
+
+      } else if (str.equals("exit")) {
+>>>>>>> bc5366be0005c050a9fdab01f1d9d5a3ec5638af
         break;
       } else if (cmd.equals("/usr/article/write")) {
         Article article = new Article();
